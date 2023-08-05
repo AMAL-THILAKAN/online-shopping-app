@@ -1,5 +1,6 @@
 package com.example.onlineshopping;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.snackbar.Snackbar;
@@ -23,9 +24,11 @@ public class LoginMainActivity extends AppCompatActivity {
   DBHelper DB;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.login_main);
 
         email = (EditText) findViewById(R.id.textEditTextEmail);
         password = findViewById(R.id.textEditTextPass);
