@@ -30,7 +30,7 @@ public class LoginMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_main);
 
-        email = (EditText) findViewById(R.id.textEditTextEmail);
+        email = findViewById(R.id.textEditTextEmail);
         password = findViewById(R.id.textEditTextPass);
         login = findViewById(R.id.logInButton);
 
@@ -48,19 +48,19 @@ public class LoginMainActivity extends AppCompatActivity {
                 }
                 else{
                     Boolean checkEmailPass = DB.checkEmailPassword(Email,Password);
+
                     if(checkEmailPass==true){
+
                         Toast.makeText(LoginMainActivity.this, "signIN successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(),home.class);
                         startActivity(intent);
+
                     }else{
+
                         Toast.makeText(LoginMainActivity.this, "INVALID CREDENTIALS", Toast.LENGTH_SHORT).show();
+
                     }
                 }
-
-
-
-
-
             }
         });
 
