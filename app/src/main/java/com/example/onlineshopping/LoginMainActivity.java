@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.core.view.WindowCompat;
@@ -21,6 +22,7 @@ public class LoginMainActivity extends AppCompatActivity {
 
   EditText email,password;
   Button login;
+  TextView newUser;
   DBHelper DB;
 
 
@@ -33,6 +35,8 @@ public class LoginMainActivity extends AppCompatActivity {
         email = findViewById(R.id.textEditTextEmail);
         password = findViewById(R.id.textEditTextPass);
         login = findViewById(R.id.logInButton);
+
+        newUser = findViewById(R.id.textView3);
 
         DB = new DBHelper(this);
 
@@ -51,7 +55,7 @@ public class LoginMainActivity extends AppCompatActivity {
 
                     if(checkEmailPass==true){
 
-                        Toast.makeText(LoginMainActivity.this, "signIN successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginMainActivity.this, "SignIn successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(),home.class);
                         startActivity(intent);
 
@@ -63,6 +67,17 @@ public class LoginMainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        newUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent newUserIntent =new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(newUserIntent);
+
+            }
+        });
+
 
     }
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/baseline_exposure_plus_1_24"
+        android:foregroundGravity="center"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="40dp"
+        />
+
+    <TextView
+        android:id="@+id/pdtName"
+        android:layout_below="@id/imageView"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="10dp"
+        android:text="Product Name" />
+
+    <TextView
+        android:id="@+id/pdtDesc"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="product description"
+        android:layout_below="@id/pdtName"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/pdtPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="price"
+        android:layout_below="@id/imageView"
+
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:id="@+id/cartLogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/cart"
+        android:layout_below="@id/pdtPrice"
+        android:layout_marginLeft="270dp"
+        />
+
+
+</RelativeLayout>
