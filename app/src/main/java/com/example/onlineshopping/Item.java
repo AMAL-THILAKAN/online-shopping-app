@@ -1,11 +1,16 @@
 package com.example.onlineshopping;
 
+import android.widget.ImageView;
+
 public class Item {
 
     String item_name;
     String description;
     String price;
     int image;
+
+
+
 
     public Item(String item_name, String description, String price, int image) {
         this.item_name = item_name;
@@ -45,4 +50,6 @@ public class Item {
     public void setImage(int image) {
         this.image = image;
     }
+
+
 }

@@ -18,6 +18,10 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         name = itemView.findViewById(R.id.pdtName);
         desc = itemView.findViewById(R.id.pdtDesc);
         price = itemView.findViewById(R.id.pdtPrice);
+        cartLogo = itemView.findViewById(R.id.cartLogo);
+
+
+//        cartLogo.setOnClickListener(this);
 
 
     }
