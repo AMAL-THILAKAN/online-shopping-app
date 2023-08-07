@@ -1,5 +1,7 @@
 package com.example.onlineshopping;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,7 +23,20 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         cartLogo = itemView.findViewById(R.id.cartLogo);
 
 
-//        cartLogo.setOnClickListener(this);
+     cartLogo.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+//DOING THIS NOW
+             Intent cartIntent = new Intent(, CartActivity.class);
+             cartIntent.putExtra("image", String.valueOf(imageView));
+             cartIntent.putExtra("name", String.valueOf(name));
+             cartIntent.putExtra("desc", String.valueOf(name));
+             cartIntent.putExtra("price", String.valueOf(name));
+
+             cartLogo.setBackgroundColor(Color.parseColor("#00FF00"));
+
+         }
+     });
 
 
     }
