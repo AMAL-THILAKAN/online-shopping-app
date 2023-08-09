@@ -27,7 +27,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
          @Override
          public void onClick(View v) {
 //DOING THIS NOW
-             Intent cartIntent = new Intent(, CartActivity.class);
+             Intent cartIntent = new Intent();
              cartIntent.putExtra("image", String.valueOf(imageView));
              cartIntent.putExtra("name", String.valueOf(name));
              cartIntent.putExtra("desc", String.valueOf(name));

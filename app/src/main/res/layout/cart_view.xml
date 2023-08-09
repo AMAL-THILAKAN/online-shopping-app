@@ -3,6 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
     <ImageView
         android:id="@+id/cartImageView"
         android:layout_width="match_parent"
@@ -11,6 +18,7 @@
         android:foregroundGravity="center"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="40dp"
+        android:layout_below="@id/toolbar"
         />
 
     <TextView
