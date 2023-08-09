@@ -2,5 +2,254 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:background="@color/Orange"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/default_person"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="PERSON NAME"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="PERSON_MAIL@gmail.com"
+            android:textSize="17dp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/back2homeBtn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Back To Home"
+        android:layout_marginTop="270dp"
+        android:textColor="@color/white"
+        android:layout_marginStart="100dp"
+        android:background="@drawable/oval_button_background"
+        android:drawableLeft="@drawable/arrow"
+
+
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account Info"
+        android:textSize="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_below="@id/linearLayout3"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+
+
+
+        <RelativeLayout
+
+            android:id="@+id/r1"
+            android:layout_below="@id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/name"/>
+        <TextView
+            android:id="@+id/tName"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_toEndOf="@id/img1"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="developer"
+            android:layout_toEndOf="@id/img1"
+            android:layout_below="@id/tName"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:id="@+id/r2"
+        android:layout_below="@id/r1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/mobile"/>
+        <TextView
+            android:id="@+id/tMobile"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile"
+            android:layout_toEndOf="@id/img2"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="+-9999999999"
+            android:layout_toEndOf="@id/img2"
+            android:layout_below="@id/tMobile"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:id="@+id/r3"
+        android:layout_below="@id/r2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/email"/>
+        <TextView
+            android:id="@+id/tMail"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_toEndOf="@id/img3"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="email@email.com"
+            android:layout_toEndOf="@id/img3"
+            android:layout_below="@id/tMail"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:id="@+id/r4"
+        android:layout_below="@id/r3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/img4"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/address"/>
+        <TextView
+            android:id="@+id/tAddress"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:layout_toEndOf="@id/img4"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Avenue a default address, Delhi"
+            android:layout_toEndOf="@id/img4"
+            android:layout_below="@id/tAddress"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:id="@+id/r5"
+        android:layout_below="@id/r4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/img5"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/dob"/>
+        <TextView
+            android:id="@+id/tDOB"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date Of Birth"
+            android:layout_toEndOf="@id/img5"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="23-12-2000"
+            android:layout_toEndOf="@id/img5"
+            android:layout_below="@id/tDOB"
+            />
+
+    </RelativeLayout>
+
+
+
+
 
 </RelativeLayout>
