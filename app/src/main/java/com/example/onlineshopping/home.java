@@ -27,6 +27,7 @@ public class home extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +40,8 @@ public class home extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView toolbarTitle = findViewById(R.id.toolbar_title);
 

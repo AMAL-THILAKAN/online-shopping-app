@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     tools:context=".home"
     android:fitsSystemWindows="true"
-    tools:openDrawer="end"
+    tools:openDrawer="start"
     >
 
     <com.google.android.material.navigation.NavigationView
@@ -18,9 +18,9 @@
         app:menu="@menu/menu_layout"
         android:layout_gravity="start"
         />
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" >-->
 
 
 <RelativeLayout
@@ -46,6 +46,6 @@
 </RelativeLayout>
 
 
-    </ScrollView>
+<!--    </ScrollView>-->
 
 </androidx.drawerlayout.widget.DrawerLayout>
