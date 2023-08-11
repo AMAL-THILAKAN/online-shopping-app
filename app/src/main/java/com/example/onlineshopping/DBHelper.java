@@ -21,15 +21,19 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase MyDB) {
 
         MyDB.execSQL("CREATE TABLE users(username TEXT primary key,email TEXT,password TEXT )");
-
+        MyDB.execSQL("create table products(product_name TEXT primary key,description TEXT ,PRICE TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase MyDB, int oldVersion, int newVersion) {
 
         MyDB.execSQL("drop table if exists users");
+        MyDB.execSQL("drop table if exists products");
+
 
     }
+
+
 
     public Boolean insertData(String username,String email,String password){
 
@@ -83,5 +87,7 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
 
     }
+
+
 
 }

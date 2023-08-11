@@ -24,6 +24,12 @@ public class home extends AppCompatActivity {
     Toolbar toolbar;
     ActionBarDrawerToggle toggle;
 
+    MyAdapter myAdapter;
+
+
+
+
+
 
     @SuppressLint({"MissingInflatedId", "SetTextI18n"})
     @Override
@@ -46,10 +52,11 @@ public class home extends AppCompatActivity {
 
         toolbarTitle.setText("HOME");
 
+//        navigationView.bringToFront();
 //        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open_drawer,R.string.close_drawer);
 //        drawerLayout.addDrawerListener(toggle);
 //        toggle.syncState();
-        
+//        navigationView.setNavigationItemSelectedListener(this);
         
         
 

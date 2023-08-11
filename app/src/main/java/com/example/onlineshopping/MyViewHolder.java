@@ -23,20 +23,20 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         cartLogo = itemView.findViewById(R.id.cartLogo);
 
 
-     cartLogo.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
-//DOING THIS NOW
-             Intent cartIntent = new Intent();
-             cartIntent.putExtra("image", String.valueOf(imageView));
-             cartIntent.putExtra("name", String.valueOf(name));
-             cartIntent.putExtra("desc", String.valueOf(name));
-             cartIntent.putExtra("price", String.valueOf(name));
-
-             cartLogo.setBackgroundColor(Color.parseColor("#00FF00"));
-
-         }
-     });
+//     cartLogo.setOnClickListener(new View.OnClickListener() {
+//         @Override
+//         public void onClick(View v) {
+////DOING THIS NOW
+//             Intent cartIntent = new Intent();
+//             cartIntent.putExtra("image", String.valueOf(imageView));
+//             cartIntent.putExtra("name", String.valueOf(name));
+//             cartIntent.putExtra("desc", String.valueOf(name));
+//             cartIntent.putExtra("price", String.valueOf(name));
+//
+//             cartLogo.setBackgroundColor(Color.parseColor("#00FF00"));
+//
+//         }
+//     });
 
 
     }
