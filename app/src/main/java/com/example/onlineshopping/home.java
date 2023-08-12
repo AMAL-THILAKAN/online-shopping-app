@@ -36,7 +36,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
     TextView toHome, toAccInfo, toCart, signOut;
 
 
-    @SuppressLint({"MissingInflatedId", "SetTextI18n"})
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,30 +108,23 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 
     }
 
-    ;
+
 
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        switch(menuItem.getItemId()) {
-
-            case R.id.nav_item1:
-                break;
-            case R.id.nav_item2:
-                Intent accInfoIntent = new Intent(getApplicationContext(),AccInfoActivity.class);
-                startActivity(accInfoIntent);
-                break;
-            case R.id.nav_item3:
-                Intent cartIntent = new Intent(getApplicationContext(),CartActivity.class);
-                startActivity(cartIntent);
-                break;
-            case R.id.nav_item4:
-                Intent signOut = new Intent(getApplicationContext(),LoginMainActivity.class);
-                startActivity(signOut);
-                break;
-
-
+        int itemId = menuItem.getItemId();
+        if (itemId == nav_item1) {
+        } else if (itemId == R.id.nav_item2) {
+            Intent accInfoIntent = new Intent(home.this, AccInfoActivity.class);
+            startActivity(accInfoIntent);
+        } else if (itemId == R.id.nav_item3) {
+            Intent cartIntent = new Intent(home.this, CartActivity.class);
+            startActivity(cartIntent);
+        } else if (itemId == R.id.nav_item4) {
+            Intent signOut = new Intent(home.this, LoginMainActivity.class);
+            startActivity(signOut);
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
