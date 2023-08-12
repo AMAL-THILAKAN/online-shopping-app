@@ -1,13 +1,18 @@
 package com.example.onlineshopping;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ShareCompat;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +22,7 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class home extends AppCompatActivity {
+public class home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -25,6 +30,9 @@ public class home extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
 
     MyAdapter myAdapter;
+
+//    TextView toHome,toAccInfo,signOut;
+
 
 
 
@@ -36,6 +44,12 @@ public class home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+//        toHome =findViewById(R.id.nav_item1);
+//        toAccInfo =findViewById(R.id.nav_item2);
+//        signOut =findViewById(R.id.nav_item3);
+
+
 
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -52,11 +66,17 @@ public class home extends AppCompatActivity {
 
         toolbarTitle.setText("HOME");
 
-//        navigationView.bringToFront();
+        navigationView.bringToFront();
+
 //        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open_drawer,R.string.close_drawer);
 //        drawerLayout.addDrawerListener(toggle);
 //        toggle.syncState();
-//        navigationView.setNavigationItemSelectedListener(this);
+
+
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_item1);
+
+
         
         
 
@@ -87,6 +107,42 @@ public class home extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter(getApplicationContext(),items));
+
+    }
+
+    public void onBackPressed(){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else{
+            super.onBackPressed();
+        }
+
+    };
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.nav_item1:
+                break;
+            case R.id.nav_item2:
+                Intent cartIntent = new Intent(getApplicationContext(),CartActivity.class);
+                startActivity(cartIntent);
+                break;
+            case R.id.nav_item3:
+                Intent signOut = new Intent(getApplicationContext(),LoginMainActivity.class);
+                startActivity(signOut);
+                break;
+
+
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
 
     }
 }

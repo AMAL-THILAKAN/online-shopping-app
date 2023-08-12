@@ -10,8 +10,6 @@ public class Item {
     int image;
 
 
-
-
     public Item(String item_name, String description, String price, int image) {
         this.item_name = item_name;
         this.description = description;
