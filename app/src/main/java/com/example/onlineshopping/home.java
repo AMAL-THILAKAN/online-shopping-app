@@ -1,5 +1,7 @@
 package com.example.onlineshopping;
 
+import static com.example.onlineshopping.R.id.nav_item1;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,12 +33,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 
     MyAdapter myAdapter;
 
-//    TextView toHome,toAccInfo,signOut;
-
-
-
-
-
+    TextView toHome, toAccInfo, toCart, signOut;
 
 
     @SuppressLint({"MissingInflatedId", "SetTextI18n"})
@@ -45,11 +42,10 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-//        toHome =findViewById(R.id.nav_item1);
-//        toAccInfo =findViewById(R.id.nav_item2);
-//        signOut =findViewById(R.id.nav_item3);
-
-
+        toHome = findViewById(R.id.nav_item1);
+        toAccInfo = findViewById(R.id.nav_item2);
+        toCart = findViewById(R.id.nav_item3);
+        signOut = findViewById(R.id.nav_item4);
 
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -72,67 +68,65 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 //        drawerLayout.addDrawerListener(toggle);
 //        toggle.syncState();
 
-
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_item1);
+        navigationView.setCheckedItem(nav_item1);
 
-
-        
-        
 
         List<Item> items = new ArrayList<>();
 
         items.add(new Item("Knight Owl (Caldecott Honor Book)",
-                "by Christopher Denise (Author)","RS 1189.53",R.drawable.book1));
+                "by Christopher Denise (Author)", "RS 1189.53", R.drawable.book1));
         items.add(new Item("The Marvellers (The Conjureverse, 1)",
-                "by Dhonielle Clayton (Author))","RS 750.00",R.drawable.book2));
+                "by Dhonielle Clayton (Author))", "RS 750.00", R.drawable.book2));
         items.add(new Item("BEILU Mens Long Sleeve Dress Shirt",
-                "Mens shirts","RS 20655.00",R.drawable.cloth1));
+                "Mens shirts", "RS 20655.00", R.drawable.cloth1));
         items.add(new Item("Mens Suit Vests Formal V-Neck Vest Dress",
-                "Men's Waistcoat","price = RS 2561.76",R.drawable.clothe2));
+                "Men's Waistcoat", "price = RS 2561.76", R.drawable.clothe2));
         items.add(new Item("JBL Tune 230NC TWS",
-                "True Wireless In-Ear Noise Cancelling Headphones","RS 8262.00",R.drawable.electronics1));
+                "True Wireless In-Ear Noise Cancelling Headphones", "RS 8262.00", R.drawable.electronics1));
         items.add(new Item("SAMSUNG Galaxy Watch",
-                "smart watch by samsung","Rs 18873.00",R.drawable.electronics2));
+                "smart watch by samsung", "Rs 18873.00", R.drawable.electronics2));
         items.add(new Item("Hydro Flask",
-                "Wide Mouth Bottle with Flex Cap","RS 3674.41",R.drawable.homeapp1));
+                "Wide Mouth Bottle with Flex Cap", "RS 3674.41", R.drawable.homeapp1));
         items.add(new Item("OVENTE Glass Electric Kettle ",
-                "1.5 Liter Borosilicate Glass Fast Boiling","RS 1239.13",R.drawable.homeapp2));
-
-
-
+                "1.5 Liter Borosilicate Glass Fast Boiling", "RS 1239.13", R.drawable.homeapp2));
 
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new MyAdapter(getApplicationContext(),items));
+        recyclerView.setAdapter(new MyAdapter(getApplicationContext(), items));
 
     }
 
-    public void onBackPressed(){
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else{
+        } else {
             super.onBackPressed();
         }
 
-    };
+    }
 
-    @SuppressLint("NonConstantResourceId")
+    ;
+
+
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        switch (item.getItemId()) {
+        switch(menuItem.getItemId()) {
 
             case R.id.nav_item1:
                 break;
             case R.id.nav_item2:
+                Intent accInfoIntent = new Intent(getApplicationContext(),AccInfoActivity.class);
+                startActivity(accInfoIntent);
+                break;
+            case R.id.nav_item3:
                 Intent cartIntent = new Intent(getApplicationContext(),CartActivity.class);
                 startActivity(cartIntent);
                 break;
-            case R.id.nav_item3:
+            case R.id.nav_item4:
                 Intent signOut = new Intent(getApplicationContext(),LoginMainActivity.class);
                 startActivity(signOut);
                 break;
@@ -143,6 +137,4 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
         return true;
     }
 
-
-    }
 }
