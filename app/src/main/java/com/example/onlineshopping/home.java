@@ -4,6 +4,7 @@ import static com.example.onlineshopping.R.id.nav_item1;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -96,6 +97,12 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter(getApplicationContext(), items));
+
+    }
+
+    public void onButtonClick(int position) {
+
+        Toast.makeText(getApplicationContext(), "Cart Clicked!", Toast.LENGTH_SHORT).show();
 
     }
 

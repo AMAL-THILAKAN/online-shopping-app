@@ -62,10 +62,12 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
+
         android:hint="Password">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textEditTextPass"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +23,17 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         price = itemView.findViewById(R.id.pdtPrice);
         cartLogo = itemView.findViewById(R.id.cartLogo);
 
+        cartLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = getAdapterPosition();
+                // Handle button click for the specific item at 'position'
+                // For example, you can call a method in your activity/fragment
+                // to perform the desired action.
+                Toast.makeText(v.getContext(), "Cart Clicked!" + String.valueOf(position), Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
 //     cartLogo.setOnClickListener(new View.OnClickListener() {
 //         @Override
