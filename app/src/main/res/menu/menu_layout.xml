@@ -5,19 +5,21 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_item1"
+            android:icon="@drawable/homeicon"
             android:title="HOME" />
         <item
             android:id="@+id/nav_item2"
+            android:icon="@drawable/accinfoicon"
             android:title="ACCOUNT INFORMATION" />
         <item
             android:id="@+id/nav_item3"
+            android:icon="@drawable/carticon"
             android:title="CART"
             />
         <item
-        android:id="@+id/nav_item4"
-        android:title="SIGN OUT" />
-
-
+            android:id="@+id/nav_item4"
+            android:icon="@drawable/signouticon"
+            android:title="SIGN OUT" />
     </group>
 
 </menu>
