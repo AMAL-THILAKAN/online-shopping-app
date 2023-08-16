@@ -7,6 +7,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +23,7 @@ public class AccInfoActivity extends AppCompatActivity implements NavigationView
 
     DrawerLayout drawerLayout;
     Toolbar toolbar;
+    Button gotoHomeBtn;
     NavigationView navigationView;
 
 
@@ -29,6 +32,8 @@ public class AccInfoActivity extends AppCompatActivity implements NavigationView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acc_info);
+
+        gotoHomeBtn = findViewById(R.id.back2homeBtn);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -52,7 +57,15 @@ public class AccInfoActivity extends AppCompatActivity implements NavigationView
         navigationView.setCheckedItem(nav_item2);
 
 
+        gotoHomeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent homeintent = new Intent(getApplicationContext(),home.class);
+                startActivity(homeintent);
+
+            }
+        });
 
     }
     public void onBackPressed() {

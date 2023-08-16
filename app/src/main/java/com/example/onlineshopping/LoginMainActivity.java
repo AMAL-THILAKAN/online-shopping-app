@@ -18,12 +18,18 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.example.onlineshopping.databinding.LoginMainBinding;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class LoginMainActivity extends AppCompatActivity {
 
   EditText email,password;
   Button login;
   TextView newUser;
   DBHelper DB;
+
+    private static final String EMAIL_PATTERN =
+            "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
 
     @SuppressLint("MissingInflatedId")
@@ -48,12 +54,23 @@ public class LoginMainActivity extends AppCompatActivity {
                 String Password = password.getText().toString();
 
                 if(email.equals("")||password.equals("")){
+
+                    if (isValidEmail(Email)) {
+                        // Email is valid, proceed with registration
+                    } else {
+                        // Invalid email, show an error message
+                        Toast.makeText(LoginMainActivity.this, "Invalid email format", Toast.LENGTH_SHORT).show();
+                    }
                     Toast.makeText(LoginMainActivity.this, "Enter all the fields", Toast.LENGTH_SHORT).show();
+
+
                 }
                 else{
                     Boolean checkEmailPass = DB.checkEmailPassword(Email,Password);
 
                     if(checkEmailPass==true){
+
+
 
                         Toast.makeText(LoginMainActivity.this, "SignIn successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(),home.class);
@@ -79,5 +96,10 @@ public class LoginMainActivity extends AppCompatActivity {
         });
 
 
+    }
+    private boolean isValidEmail(String email) {
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 }

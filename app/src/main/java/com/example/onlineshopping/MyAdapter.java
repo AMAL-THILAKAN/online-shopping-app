@@ -1,9 +1,6 @@
 package com.example.onlineshopping;
 
-import android.content.ClipData;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
-    
+
     Context context;
     List<Item> items;
 
@@ -54,8 +52,9 @@ public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView pdtName,pdtDesc,pdtPrice;
         ImageView pdtImg;
-
         ImageView cartLogo;
+
+
 
     public ViewHolder(View itemView) {
         super(itemView);
@@ -67,20 +66,9 @@ public class ViewHolder extends RecyclerView.ViewHolder{
 
         cartLogo = itemView.findViewById(R.id.cartLogo);
 
-        cartLogo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//DOING THIS NOW
-                int position  = getAdapterPosition();
-
-
-
-                cartLogo.setImageResource(R.drawable.icon_selector);
-
-            }
-        });
 
 
     }
+
 }
 }

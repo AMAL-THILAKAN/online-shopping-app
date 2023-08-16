@@ -115,9 +115,6 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 
     }
 
-
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
