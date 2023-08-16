@@ -1,7 +1,5 @@
 package com.example.onlineshopping;
 
-import android.widget.ImageView;
-
 public class Item {
 
     String item_name;
@@ -17,7 +15,7 @@ public class Item {
         this.image = image;
     }
 
-    public String getItem_name() {
+    public  String getItem_name() {
         return item_name;
     }
 
